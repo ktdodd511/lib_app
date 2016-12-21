@@ -12,10 +12,10 @@
 
     <% flash.each do |name, msg| %>
     <p>
-      <small><%= name.capitalize %>: <%= msg %> </small>
+      <%= name.capitalize %>: <%= msg %>
     </p>
     <% end %>
-    
+
     <ul>
       <% if current_user %>
       <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -23,6 +23,7 @@
       <% else %>
       <li><%= link_to "Create Account", new_user_path %></li>
       <li><%= link_to "Log In", login_path %></li>
+      <br>
       <% end %>
 
     <%= yield %>
